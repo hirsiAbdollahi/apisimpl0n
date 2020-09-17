@@ -1,0 +1,18 @@
+language: python
+python:
+  - "3.8"
+sudo: required
+
+services:
+  - docker
+
+before_install:
+
+script:
+    - echo 'foo'
+
+deploy:
+    provider: heroku
+    api_key: $HEROKU_TOKEN
+    app : the-app-to-tangram
+    skip_cleanup: True
